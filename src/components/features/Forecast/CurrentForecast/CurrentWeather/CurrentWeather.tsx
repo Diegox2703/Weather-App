@@ -8,7 +8,7 @@ export function CurrentWeather() {
             <span className='text-Neutral-300 text-sm'>Tuesday, Aug 5, 2025</span>
         </section>
         <section className='flex items-center'>
-            <img width={100} height={100} src={sunnyIcon} alt="icon-sunny"/>    
+            <img width={100} src={sunnyIcon} alt="icon-sunny"/>    
             <h1 className='text-Neutral-0 text-7xl font-semibold font-DM-Sans-Italic'>68°</h1>
         </section>
     </article>
