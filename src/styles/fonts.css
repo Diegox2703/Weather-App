@@ -5,6 +5,11 @@
 }
 
 @font-face {
+    font-family: "DM Sans Italic";
+    src: url('../assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf');
+}
+
+@font-face {
     font-family: "Bricolage Grotesque";
     font-weight: 700;
     src: url("../assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz_wdth_wght.ttf");
