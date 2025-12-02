@@ -1,7 +1,9 @@
+import { Forecast } from '@/components/features'
+
 export function Main() {
   return (
     <main>
-      Main
+      <Forecast/>
     </main>
   )
 }

@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 export const dropdownMenuItemStyles = cva(
-    'flex items-center justify-between text-Neutral-0 py-2 px-2 rounded-md transition-colors',
+    'flex items-center justify-between text-Neutral-0 p-2 rounded-md transition-colors',
     {
         variants: {
             isActive: {

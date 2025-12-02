@@ -1,8 +1,9 @@
 import type { DropdownMenuProps } from "./dropdown-menu";
+import { dropdownMenuStyles } from "./dropdown-menu.styles";
 
-export function DropdownMenu({ children }: DropdownMenuProps) {
+export function DropdownMenu({ children, className }: DropdownMenuProps) {
   return (
-    <div className="bg-Neutral-800 rounded-md p-1.5 w-50 min-h-10 absolute right-0 top-12">
+    <div className={ dropdownMenuStyles({ className }) }>
       <ul>
         { children }
       </ul>
