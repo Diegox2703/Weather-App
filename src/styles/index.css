@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./themes.css";
 @import "./fonts.css";
+@import "./utilities.css";
 
 body {
     @apply bg-Neutral-900 font-DM-Sans;

@@ -1,0 +1,6 @@
+@layer utilities {
+    .custom-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-Neutral-700) var(--color-Neutral-800);
+    }
+}

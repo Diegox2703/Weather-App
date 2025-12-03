@@ -3,9 +3,9 @@ import { WeatherDetails } from './WeatherDetails'
 
 export function CurrentForecast() {
   return (
-    <section className='flex flex-col gap-8 w-[800px]'>
+    <section className='flex flex-col gap-8 w-full'>
       <CurrentWeather/>
-      <section className='flex gap-5'>
+      <section className='grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-5'>
         <WeatherDetails/>
         <WeatherDetails/>
         <WeatherDetails/>
