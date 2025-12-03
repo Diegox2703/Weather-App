@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "class-variance-authority": "^0.7.1",
+    "motion": "^12.23.25",
     "react": "^19.2.0",
     "react-circle-flags": "^0.0.25",
     "react-dom": "^19.2.0",
