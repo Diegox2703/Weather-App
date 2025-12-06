@@ -8,6 +8,7 @@ export function Input({ ...props }: InputProps) {
         <input 
             className="text-Neutral-0 font-semibold placeholder:text-Neutral-300 placeholder:font-semibold size-full outline-0" 
             {...props}
+            autoComplete='off'
         />
     </div>
   )

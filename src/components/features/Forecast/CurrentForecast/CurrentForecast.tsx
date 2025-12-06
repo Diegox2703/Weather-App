@@ -1,16 +1,29 @@
-import { CurrentWeather } from './CurrentWeather'
-import { WeatherDetails } from './WeatherDetails'
+import type { CurrentForecastProps } from './current-forecast.types'
+import { CurrentForecastDetails } from './CurrentForecastDetails'
+import { CurrentForecastPlace } from './CurrentForecastPlace'
 
-export function CurrentForecast() {
+export function CurrentForecast({ country, name, current, current_units }: CurrentForecastProps) {
+  const { 
+    apparent_temperature,
+    precipitation,
+    relative_humidity_2m,
+    temperature_2m,
+    time,
+    wind_speed_10m
+   } = current
+
   return (
     <section className='flex flex-col gap-8 w-full'>
-      <CurrentWeather/>
-      <section className='grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-5'>
-        <WeatherDetails/>
-        <WeatherDetails/>
-        <WeatherDetails/>
-        <WeatherDetails/>
-      </section>
+      <CurrentForecastPlace
+        country={country} 
+        name={name} 
+        temperature_2m={temperature_2m} 
+        time={time}   
+      />
+      <CurrentForecastDetails
+        current={{apparent_temperature, precipitation, relative_humidity_2m, wind_speed_10m}}
+        currentUnits={current_units}
+      />
     </section>
   )
 }

@@ -1,0 +1,1 @@
+export { CurrentForecastPlace } from './CurrentForecastPlace'
