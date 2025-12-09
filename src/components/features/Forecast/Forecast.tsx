@@ -20,9 +20,9 @@ export function Forecast() {
               current={forecast.current}
               current_units={forecast.current_units}
             />
-            <DailyForecast/>
+            <DailyForecast {...forecast.daily}/>
           </section>
-          <HourlyForecast/>
+          <HourlyForecast {...forecast.hourly}/>
         </section>
       }
     </div>

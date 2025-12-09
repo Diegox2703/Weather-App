@@ -1,0 +1,23 @@
+import type { CurrentSchema, CurrentUnitsSchema } from '@/schema'
+import type { PlaceDetails } from './place'
+import type { Forecast } from './forecast'
+import type z from 'zod'
+
+type CurrentUnits = z.infer<typeof CurrentUnitsSchema>
+
+type Current = z.infer<typeof CurrentSchema>
+
+export interface CurrentForecast extends PlaceDetails, Pick<Forecast, 'current' | 'current_units'> {}
+
+export interface CurrentForecastPlace extends PlaceDetails, Pick<Current, 'time' | 'temperature_2m'> {}
+
+export interface CurrentForecastDetails {
+    current: Omit<Current, 'time' | 'temperature_2m'>
+    currentUnits: CurrentUnits
+}
+
+export interface CurrentForecastDetailsItem {
+    section: string
+    value: number
+    unit: string
+}

@@ -10,7 +10,7 @@ export function CurrentForecastPlace({ name, country, temperature_2m, time }: Cu
         </section>
         <section className='flex items-center'>
             <img width={100} src={sunnyIcon} alt="icon-sunny"/>    
-            <h1 className='text-Neutral-0 text-7xl font-semibold font-DM-Sans-Italic'>{temperature_2m}°</h1>
+            <h1 className='text-Neutral-0 text-7xl font-semibold font-DM-Sans-Italic'>{temperature_2m.toFixed(0)}°</h1>
         </section>
     </article>
   )
