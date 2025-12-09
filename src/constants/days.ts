@@ -1,6 +1,6 @@
 import type { DropdownMenuItem } from '@/types'
 
-export const DAYS: DropdownMenuItem[] = [
+export const DAILY_MENU_ITEMS: DropdownMenuItem[] = [
     {
         value: 'monday',
         label: 'Monday'
