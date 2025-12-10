@@ -9,10 +9,10 @@ type Current = z.infer<typeof CurrentSchema>
 
 export interface CurrentForecast extends PlaceDetails, Pick<Forecast, 'current' | 'current_units'> {}
 
-export interface CurrentForecastPlace extends PlaceDetails, Pick<Current, 'time' | 'temperature_2m'> {}
+export interface CurrentForecastPlace extends PlaceDetails, Pick<Current, 'time' | 'temperature_2m'| 'weather_code'> {}
 
 export interface CurrentForecastDetails {
-    current: Omit<Current, 'time' | 'temperature_2m'>
+    current: Omit<Current, 'time' | 'temperature_2m' | 'weather_code'>
     currentUnits: CurrentUnits
 }
 

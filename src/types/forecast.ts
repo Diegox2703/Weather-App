@@ -13,3 +13,5 @@ export interface Units {
     temperature_unit: 'celsius' | 'fahrenheit'
     precipitation_unit: 'mm' | 'inch'
 }
+
+export type WeatherIcons = 'sunny' | 'partly-cloudy' | 'overcast' | 'fog' | 'drizzle' | 'rain' | 'snow' | 'storm'

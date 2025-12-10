@@ -12,7 +12,8 @@ export const CurrentSchema = z.object({
     relative_humidity_2m: z.number(),
     apparent_temperature: z.number(),
     precipitation: z.number(),
-    wind_speed_10m: z.number()
+    wind_speed_10m: z.number(),
+    weather_code: z.number()
 })
 
 export const DailySchema = z.object({
