@@ -1,7 +1,16 @@
 import type { HourlySchema } from '@/schema'
+import type { DailyForecastTime } from './daily-forecast'
+import type { CurrentTime } from './current-forecast'
 import type z from 'zod'
-import type { Unarray } from './utils'
 
-export type HourlyForecast = z.infer<typeof HourlySchema>
+export type Hourly = z.infer<typeof HourlySchema>
 
-export type HourlyForecastItem = Unarray<HourlyForecast>
+export type HourlyItem = Hourly[number]
+
+export interface HourlyForecast {
+    hourlyItems: Hourly
+    days: DailyForecastTime
+    currentTime: CurrentTime
+}
+
+export type HourlyForecastItem = HourlyItem

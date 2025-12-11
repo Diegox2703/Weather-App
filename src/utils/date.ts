@@ -12,11 +12,10 @@ export const getCurrentDate = (date: string) => {
 }
 
 export const getDay = (date: string) => {
-    const selectedDate = new Date(date)
+    const [ year, month, day ] = date.split('-').map(Number)
+    const selectedDate = new Date(year, month - 1, day)
 
-    const day = DAYS[selectedDate.getDay()].slice(0, 3)
-
-    return day
+    return DAYS[selectedDate.getDay()].slice(0, 3)
 }
 
 export const getTime = (date: string) => {

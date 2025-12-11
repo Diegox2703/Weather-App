@@ -1,7 +1,7 @@
 import type { DailyMenuProps } from '@/types'
 import { useState } from 'react'
 
-export const useDailyMenu = ({ days, placeholder, value }: DailyMenuProps) => {
+export const useDailyMenu = ({ days, placeholder, value, onChange }: DailyMenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOpt, setSelectedOpt] = useState('')
 
@@ -20,6 +20,7 @@ export const useDailyMenu = ({ days, placeholder, value }: DailyMenuProps) => {
 
   const handleSelectedOpt = (value: string) => {
     setSelectedOpt(value)
+    onChange(value)
   }
 
   return {

@@ -5,7 +5,7 @@ import type z from 'zod'
 
 type CurrentUnits = z.infer<typeof CurrentUnitsSchema>
 
-type Current = z.infer<typeof CurrentSchema>
+export type Current = z.infer<typeof CurrentSchema>
 
 export interface CurrentForecast extends PlaceDetails, Pick<Forecast, 'current' | 'current_units'> {}
 
@@ -21,3 +21,5 @@ export interface CurrentForecastDetailsItem {
     value: number
     unit: string
 }
+
+export type CurrentTime = Current['time']

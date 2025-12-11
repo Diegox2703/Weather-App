@@ -3,14 +3,14 @@ import { useDailyMenu } from '@/hooks'
 import type { DailyMenuProps } from '@/types'
 import { AnimatePresence } from 'motion/react'
 
-export function DailyMenu({ days, value, placeholder }: DailyMenuProps) {
+export function DailyMenu({ days, value, placeholder, onChange }: DailyMenuProps) {
   const { 
     isOpen, 
     selectedOpt, 
     handleSelectValue, 
     handleSelectedOpt, 
     toggleMenu 
-} = useDailyMenu({ days, placeholder, value })
+} = useDailyMenu({ days, placeholder, value, onChange })
 
   return (
     <div className='relative'>

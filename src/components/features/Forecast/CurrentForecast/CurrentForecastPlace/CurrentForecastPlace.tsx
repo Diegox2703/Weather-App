@@ -1,5 +1,5 @@
-import { getCurrentDate, getWeatherIcon } from '@/utils'
 import type { CurrentForecastPlaceProps } from './current-forecast-place.types'
+import { getCurrentDate, getWeatherIcon } from '@/utils'
 
 export function CurrentForecastPlace({ name, country, temperature_2m, time, weather_code }: CurrentForecastPlaceProps) {
   const weatherIcon = getWeatherIcon(weather_code)
