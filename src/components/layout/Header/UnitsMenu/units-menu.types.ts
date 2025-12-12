@@ -1,5 +1,5 @@
-import type { DropdownMenuSection } from '@/types'
+import type { UnitsMenuSection } from '@/types'
 
 export interface UnitsMenuProps {
-    unitItems: DropdownMenuSection[]
+    unitItems: UnitsMenuSection[]
 }

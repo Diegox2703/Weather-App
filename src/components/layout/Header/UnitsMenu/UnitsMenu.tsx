@@ -2,16 +2,12 @@ import { DropdownItem, DropdownMenu, DropdownSection, UnitSelectBtn } from '@/co
 import type { UnitsMenuProps } from './units-menu.types'
 import { useState } from 'react'
 import { AnimatePresence } from 'motion/react'
+import { useForecastStore } from '@/store'
 
 export function UnitsMenu({ unitItems }: UnitsMenuProps) {
+  const { unitSystem, handleUnits, handleSelectedUnit } = useForecastStore(store => store)
   const [isOpen, setIsOpen] = useState(false)
   const toggleMenu = () => {setIsOpen(!isOpen)}
-
-  const handleSelectedUnit = (section: string) => {
-    if (section === 'Temperature') return 'fahrenheit'
-    if (section === 'Wind Speed') return 'mph'
-    return 'in'
-  }
 
   return (
     <div className='relative'>
@@ -20,7 +16,11 @@ export function UnitsMenu({ unitItems }: UnitsMenuProps) {
         {
           isOpen &&
           <DropdownMenu>
-            <DropdownItem value='unit-btn' label='Switch to imperial' onClick={() => console.log('Click')}/>
+            <DropdownItem 
+              value='unit-btn' 
+              label={`Switch to ${unitSystem === 'metric' ? 'imperial' : 'metric'}`} 
+              onClick={handleUnits}
+            />
             {
               unitItems.map(unit => (
                 <DropdownSection 

@@ -1,6 +1,6 @@
-import type { DropdownMenuSection } from '@/types'
+import type { UnitsMenuSection } from '@/types'
 
-export const UNITS: DropdownMenuSection[] = [
+export const UNITS_MENU_ITEMS: UnitsMenuSection[] = [
     {
         section: 'Temperature',
         items: [
@@ -35,7 +35,7 @@ export const UNITS: DropdownMenuSection[] = [
                 label: 'Millimeters (mm)'
             },
             {
-                value: 'in',
+                value: 'inch',
                 label: 'Inches (in)'
             }
         ],
