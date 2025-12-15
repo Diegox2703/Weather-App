@@ -1,23 +1,54 @@
 import { getPlace } from '@/services'
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
+import { useDebounce } from './useDebounce'
+import { useForecastStore } from '@/store'
+import type { Place } from '@/types'
 
 export const usePlaceSearch = () => {
+    const [query, setQuery] = useState('')
     const [search, setSearch] = useState('')
+    const [isFocus, setIsFocus] = useState(false)
+    const debouncedSearch = useDebounce(search)
+    const selectPlace = useForecastStore(store => store.selectPlace)
     
-    const { data, refetch, isLoading } = useQuery({
-        queryKey: ['place', search],
-        queryFn: () => getPlace(search),
-        enabled: false
+    const { data, isLoading, isError } = useQuery({
+        queryKey: ['place', debouncedSearch],
+        queryFn: ({ signal }) => getPlace(debouncedSearch, signal),
+        enabled: debouncedSearch.trim() !== '',
+        refetchOnWindowFocus: false
     })
 
-    const handleSearchBarValue = (e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)
-
-    const searchPlace = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        if (search.trim() === '') return
-        refetch()
+    const onHandleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearch(e.target.value)
+        setQuery(e.target.value)
     }
 
-    return { handleSearchBarValue, searchPlace, isLoading, data }
+    const onHandleSearchByEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        const key = e.key
+        if (key === 'Enter' && data) {
+            selectPlace(data[0])
+            setQuery(data[0].name)
+            e.currentTarget.blur()
+        } 
+    }
+
+    const onHandleSearchByClick = (place: Place) => {
+        selectPlace(place)
+        setQuery(place.name)
+    }
+
+    const onHandleFocus = (state: boolean) => setIsFocus(state)
+
+    return { 
+        onHandleSearch, 
+        onHandleSearchByEnter, 
+        onHandleSearchByClick, 
+        onHandleFocus,
+        isLoading,
+        isError, 
+        data, 
+        query,
+        isFocus 
+    }
 }

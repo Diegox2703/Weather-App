@@ -1,1 +1,0 @@
-export { PlaceSearchBar } from './PlaceSearchBar'

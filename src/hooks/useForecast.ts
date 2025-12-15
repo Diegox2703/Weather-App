@@ -14,7 +14,8 @@ export const useForecast = () => {
 
     const { data } = useQuery({
         queryKey: ['forecast', params],
-        queryFn: () => getForecast(params)
+        queryFn: ({ signal }) => getForecast(params, signal),
+        refetchOnWindowFocus: false
     })
 
     const forecast: Forecast | undefined = data ? {

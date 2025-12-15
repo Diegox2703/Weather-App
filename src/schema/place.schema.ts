@@ -10,5 +10,5 @@ export const PlaceSchema = z.object({
 })
 
 export const PlaceResponseSchema = z.object({
-    results: z.array(PlaceSchema)
+    results: z.array(PlaceSchema).default([])
 })

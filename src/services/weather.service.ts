@@ -3,12 +3,13 @@ import { ForecastSchema, PlaceResponseSchema } from '@/schema'
 import type { ForecastParams, ForecastResponse, PlaceName } from '@/types'
 import { forecastParams } from '@/utils'
 
-export const getPlace = async (name: PlaceName, count = 5) => {
+export const getPlace = async (name: PlaceName, signal: AbortSignal, count = 5) => {
     const { data } = await searchApi.get('/search', {
         params: {
             name,
             count
-        }
+        },
+        signal
     })
 
     const res = PlaceResponseSchema.parse(data)
@@ -16,9 +17,10 @@ export const getPlace = async (name: PlaceName, count = 5) => {
     return res.results
 }
 
-export const getForecast = async (params: ForecastParams): Promise<ForecastResponse> => {
+export const getForecast = async (params: ForecastParams, signal: AbortSignal): Promise<ForecastResponse> => {
     const { data } = await forecastApi.get('forecast', {
-        params: forecastParams(params)
+        params: forecastParams(params),
+        signal
     })
 
     const res = ForecastSchema.parse(data)
