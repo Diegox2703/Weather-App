@@ -22,4 +22,9 @@ export interface CurrentForecastDetailsItem {
     unit: string
 }
 
+export interface CurrentDetailsConfig {
+    key: keyof Omit<Current, 'time' | 'temperature_2m' | 'weather_code'>
+    section: string
+}
+
 export type CurrentTime = Current['time']

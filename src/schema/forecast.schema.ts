@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 export const CurrentUnitsSchema = z.object({
+    apparent_temperature: z.string().transform(() => ('°')),
     relative_humidity_2m: z.string(),
     precipitation: z.string(),
     wind_speed_10m: z.string()
