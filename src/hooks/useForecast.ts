@@ -12,10 +12,11 @@ export const useForecast = () => {
         ...units
     }
 
-    const { data } = useQuery({
+    const { data, isLoading, isError, refetch } = useQuery({
         queryKey: ['forecast', params],
         queryFn: ({ signal }) => getForecast(params, signal),
-        refetchOnWindowFocus: false
+        refetchOnWindowFocus: false,
+        retry: 2
     })
 
     const forecast: Forecast | undefined = data ? {
@@ -24,5 +25,5 @@ export const useForecast = () => {
         ...data
     } : undefined
 
-    return { forecast }
+    return { forecast, isLoading, isError, refetch }
 }
