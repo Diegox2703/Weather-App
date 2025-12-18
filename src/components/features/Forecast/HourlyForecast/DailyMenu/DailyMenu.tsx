@@ -9,12 +9,13 @@ export function DailyMenu({ days, value, placeholder, onChange }: DailyMenuProps
     selectedOpt, 
     handleSelectValue, 
     handleSelectedOpt, 
-    toggleMenu 
+    openMenu,
+    closeMenu, 
 } = useDailyMenu({ days, placeholder, value, onChange })
 
   return (
     <div className='relative'>
-      <BaseBtn onClick={toggleMenu} onBlur={toggleMenu} variant='secondary'>
+      <BaseBtn onClick={openMenu} onBlur={closeMenu} variant='secondary'>
         { handleSelectValue() }
         <DropdownIcon/>
       </BaseBtn>

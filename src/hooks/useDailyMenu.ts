@@ -5,7 +5,9 @@ export const useDailyMenu = ({ days, placeholder, value, onChange }: DailyMenuPr
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOpt, setSelectedOpt] = useState('')
 
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const openMenu = () => setIsOpen(!isOpen)
+
+  const closeMenu = () => setIsOpen(false)
 
   const handleSelectValue = () => {
     const day = days.find(day => day.value === selectedOpt)
@@ -26,7 +28,8 @@ export const useDailyMenu = ({ days, placeholder, value, onChange }: DailyMenuPr
   return {
     isOpen,
     selectedOpt,
-    toggleMenu,
+    openMenu,
+    closeMenu,
     handleSelectValue,
     handleSelectedOpt
   }
