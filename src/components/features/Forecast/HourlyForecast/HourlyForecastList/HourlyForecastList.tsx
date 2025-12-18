@@ -7,8 +7,6 @@ export function HourlyForecastList({ hourlyItems, defaultTime }: HourlyForecastL
   const store = useForecastStore(store => store)
   const filteredHourlyItems = store.filterHourlyItems(hourlyItems, defaultTime)
 
-  console.log(filteredHourlyItems)
-
   return (
     <section className={styles}>
     {
