@@ -1,14 +1,14 @@
 import { create } from 'zustand'
-import type { UseForecastStore } from './use-forcast-store.types'
+import type { ForecastStore } from './forcast-store.types'
 
-export const useForecastStore = create<UseForecastStore>((set, get) => ({
+export const useForecastStore = create<ForecastStore>((set, get) => ({
     place: {
-        id: 1,
-        latitude: 0,
-        longitude: 0,
-        country: '',
-        country_code: '',
-        name: ''
+        id: 2950159,
+        latitude: 52.52437,
+        longitude: 13.41053,
+        country: 'Germany',
+        country_code: 'DE',
+        name: 'Berlin'
     },
     unitSystem: 'metric',
     units: {

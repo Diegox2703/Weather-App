@@ -1,6 +1,6 @@
 import type { CurrentTime, Hourly, MeasurementUnits, Place, Units, UnitSection, UnitSystem } from '@/types'
 
-export interface UseForecastStore {
+export interface ForecastStore {
     place: Place 
     unitSystem: UnitSystem
     units: MeasurementUnits

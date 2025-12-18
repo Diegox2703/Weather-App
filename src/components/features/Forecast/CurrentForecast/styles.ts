@@ -1,0 +1,1 @@
+export const styles = 'flex flex-col gap-8 w-full'

@@ -1,0 +1,1 @@
+export const styles = 'flex items-center justify-between my-10'

@@ -1,6 +1,7 @@
 import { BaseBtn, Input } from '@/components/ui'
 import { usePlaceSearch } from '@/hooks'
 import { SearchResultMenu } from '../SearchResultMenu'
+import { styles } from './styles'
 
 export function PlaceSearch() {
   const { 
@@ -16,8 +17,8 @@ export function PlaceSearch() {
   } = usePlaceSearch()
 
   return (
-    <section className='flex justify-center gap-3 w-full'>
-      <div className='relative w-full max-w-96'>
+    <section className={styles.container}>
+      <div className={styles.search}>
         <Input 
           onChange={onHandleSearch}
           onKeyDown={onHandleSearchByEnter}

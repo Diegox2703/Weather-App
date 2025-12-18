@@ -1,9 +1,10 @@
 import { ErrorIcon } from '@/components/ui'
 import type { SearchErrorProps } from './search-error.types'
+import { styles } from './styles'
 
 export function SearchError({ message }: SearchErrorProps) {
   return (
-    <article className='flex items-center gap-2 text-Neutral-0 text-sm p-2'>
+    <article className={styles}>
       <ErrorIcon/>
       { message }
     </article>

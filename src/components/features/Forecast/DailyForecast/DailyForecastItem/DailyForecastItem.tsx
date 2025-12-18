@@ -1,5 +1,6 @@
 import { getDay, getWeatherIcon } from '@/utils'
 import type { DailyForecastItemProps } from './daily-forecast-item.types'
+import { styles } from './styles'
 
 export function DailyForecastItem({
   time, 
@@ -10,12 +11,12 @@ export function DailyForecastItem({
   const weatherIcon = getWeatherIcon(weather_code)
 
   return (
-    <article className='bg-Neutral-800 flex flex-col px-2 py-3 h-44 rounded-md items-center justify-between'>
-        <h2 className='text-Neutral-0'>{ getDay(time) }</h2>
+    <article className={styles.container}>
+        <h2 className={styles.day}>{ getDay(time) }</h2>
         <img src={`/images/icon-${weatherIcon}.webp`} alt="weather-icon" width={70}/>
-        <section className='flex items-center justify-between w-full'>
-            <p className='text-Neutral-0'>{ temperature_2m_max.toFixed(0) }°</p>
-            <p className='text-Neutral-300'>{ temperature_2m_min.toFixed(0) }°</p>
+        <section className={styles.tempSection}>
+            <p className={styles.maxTemp}>{ temperature_2m_max.toFixed(0) }°</p>
+            <p className={styles.minTemp}>{ temperature_2m_min.toFixed(0) }°</p>
         </section>
     </article>
   )

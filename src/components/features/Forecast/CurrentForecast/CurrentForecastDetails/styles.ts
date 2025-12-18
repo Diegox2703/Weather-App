@@ -1,0 +1,1 @@
+export const styles = 'grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-5'

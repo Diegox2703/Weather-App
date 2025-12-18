@@ -1,6 +1,7 @@
 import type { CurrentForecastProps } from './current-forecast.types'
 import { CurrentForecastDetails } from './CurrentForecastDetails'
 import { CurrentForecastPlace } from './CurrentForecastPlace'
+import { styles } from './styles'
 
 export function CurrentForecast({ country, name, current, current_units }: CurrentForecastProps) {
   const { 
@@ -14,7 +15,7 @@ export function CurrentForecast({ country, name, current, current_units }: Curre
    } = current
 
   return (
-    <section className='flex flex-col gap-8 w-full'>
+    <section className={styles}>
       <CurrentForecastPlace
         weather_code={weather_code}
         country={country} 

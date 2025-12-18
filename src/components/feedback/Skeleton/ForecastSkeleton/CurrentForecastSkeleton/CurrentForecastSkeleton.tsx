@@ -1,13 +1,14 @@
 import { Skeleton } from '../../Skeleton'
+import { styles } from './styles'
 
 export function CurrentForecastSkeleton() {
   return (
-    <section className='flex flex-col gap-8 w-full'>
-        <Skeleton className='w-full h-[286px] rounded-3xl'/>
-        <section className='grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-5'>
+    <section className={styles.container}>
+        <Skeleton className={styles.place}/>
+        <section className={styles.detailsSection}>
             {
                 Array.from({ length: 4 }).map((_, i) => (
-                    <Skeleton key={i} className='h-30 rounded-md'/>
+                    <Skeleton key={i} className={styles.details}/>
                 ))
             }
         </section>

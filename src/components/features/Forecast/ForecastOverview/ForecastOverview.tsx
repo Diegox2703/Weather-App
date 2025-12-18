@@ -3,6 +3,7 @@ import { CurrentForecast } from '../CurrentForecast'
 import { DailyForecast } from '../DailyForecast'
 import { HourlyForecast } from '../HourlyForecast'
 import { ForecastError, ForecastSkeleton } from '@/components/feedback'
+import { styles } from './styles'
 
 export function ForecastOverview() {
   const { forecast, isLoading, isError, refetch } = useForecast()
@@ -15,8 +16,8 @@ export function ForecastOverview() {
     <>
         {
             forecast &&
-            <section className='flex flex-wrap gap-10'>
-                <section className='flex-2 min-w-[280px] sm:min-w-[400px]'>
+            <section className={styles.container}>
+                <section className={styles.forecast_main}>
                     <CurrentForecast 
                         country={forecast.country}
                         name={forecast.name}

@@ -1,9 +1,10 @@
 import { ForecastSearch } from './ForecastSearch'
 import { ForecastOverview } from './ForecastOverview'
+import { styles } from './styles'
 
 export function Forecast() {
   return (
-    <div className='flex flex-col gap-10'>
+    <div className={styles}>
       <ForecastSearch/>
       <ForecastOverview/>
     </div>

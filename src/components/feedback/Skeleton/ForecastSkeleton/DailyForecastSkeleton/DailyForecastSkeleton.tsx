@@ -1,11 +1,12 @@
 import { Skeleton } from '../../Skeleton'
+import { styles } from './styles'
 
 export function DailyForecastSkeleton() {
   return (
-    <section className='mt-12 grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] gap-3'>
+    <section className={styles.container}>
         {
             Array.from({ length: 7 }).map((_, i) => (
-                <Skeleton key={i} className='h-44 rounded-md'/>
+                <Skeleton key={i} className={styles.dailyItem}/>
             ))
         }
     </section>

@@ -1,7 +1,8 @@
 import type { SkeletonProps } from './skeleton.types'
+import { styles } from './styles'
 
 export function Skeleton({ className }: SkeletonProps) {
   return (
-    <div className={`${className} bg-Neutral-700 animate-pulse`}></div>
+    <div className={styles({ className })}></div>
   )
 }

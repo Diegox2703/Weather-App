@@ -1,10 +1,11 @@
 import { CurrentForecastDetailsItem } from '../CurrentForecastDetailsItem'
+import { styles } from './styles'
 import type { CurrentForecastDetailsProps } from './current-forecast-details.types'
 import { CURRENT_DETAILS_CONFIG } from '@/constants'
 
 export function CurrentForecastDetails({ current, currentUnits }: CurrentForecastDetailsProps) {
   return (
-    <section className='grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-5'>
+    <section className={styles}>
         {
           CURRENT_DETAILS_CONFIG.map(item => (
             <CurrentForecastDetailsItem

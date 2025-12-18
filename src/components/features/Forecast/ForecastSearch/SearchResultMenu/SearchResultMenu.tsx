@@ -2,6 +2,7 @@ import { SearchError, SearchIsLoading } from '@/components/feedback'
 import { DropdownMenu, DropdownPlaceItem } from '@/components/ui'
 import { AnimatePresence } from 'motion/react'
 import type { SearchResultMenuProps } from './search-result-menu.types'
+import { styles } from './styles'
 
 export function SearchResultMenu({
     isError,
@@ -14,25 +15,25 @@ export function SearchResultMenu({
     <AnimatePresence>
         { 
             isLoading && isFocus && 
-            <DropdownMenu className='w-full top-14'>
+            <DropdownMenu className={styles}>
                 <SearchIsLoading/> 
             </DropdownMenu>
         }
         { 
             isError && isFocus && 
-            <DropdownMenu className='w-full top-14'>
+            <DropdownMenu className={styles}>
                 <SearchError message='An error has occurred'/> 
             </DropdownMenu>
         }
         {
             results && results.length === 0 && isFocus &&
-            <DropdownMenu className='w-full top-14'>
+            <DropdownMenu className={styles}>
                 <SearchError message='No place was found'/>
             </DropdownMenu>
         }
         {
             results && results.length > 0 && isFocus &&
-            <DropdownMenu className='w-full top-14'>
+            <DropdownMenu className={styles}>
                 {
                     results.map(place => (
                         <DropdownPlaceItem

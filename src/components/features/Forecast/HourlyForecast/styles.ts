@@ -1,0 +1,1 @@
+export const styles = 'flex-1 min-w-[280px] sm:min-w-[350px] max-h-[702px] bg-Neutral-800 rounded-md w-full p-5'

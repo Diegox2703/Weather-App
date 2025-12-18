@@ -1,0 +1,1 @@
+export const styles = 'flex flex-col gap-3 max-h-[600px] pr-2 overflow-auto custom-scroll'

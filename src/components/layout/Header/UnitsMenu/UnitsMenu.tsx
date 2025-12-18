@@ -5,9 +5,11 @@ import { AnimatePresence } from 'motion/react'
 import { useForecastStore } from '@/store'
 
 export function UnitsMenu({ unitItems }: UnitsMenuProps) {
-  const { unitSystem, handleUnits, handleSelectedUnit } = useForecastStore(store => store)
+  const unitSystem = useForecastStore(store => store.unitSystem)
+  const handleUnits = useForecastStore(store => store.handleUnits)
+  const handleSelectedUnit = useForecastStore(store => store.handleSelectedUnit)
   const [isOpen, setIsOpen] = useState(false)
-  const toggleMenu = () => {setIsOpen(!isOpen)}
+  const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
     <div className='relative'>

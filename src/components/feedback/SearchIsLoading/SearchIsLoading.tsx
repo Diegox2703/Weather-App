@@ -1,9 +1,10 @@
 import { LoadingIcon } from '@/components/ui'
+import { styles } from './styles'
 
 export function SearchIsLoading() {
   return (
-    <article className='flex items-center gap-2 text-Neutral-0 text-sm p-2'>
-      <div className='animate-spin'>
+    <article className={styles.container}>
+      <div className={styles.icon}>
         <LoadingIcon/>
       </div>
       Search in progress
