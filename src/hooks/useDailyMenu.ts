@@ -4,7 +4,6 @@ import { useState } from 'react'
 export const useDailyMenu = ({ days, placeholder, value, onChange }: DailyMenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOpt, setSelectedOpt] = useState('')
-
   const openMenu = () => setIsOpen(!isOpen)
 
   const closeMenu = () => setIsOpen(false)

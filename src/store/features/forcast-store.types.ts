@@ -6,7 +6,7 @@ export interface ForecastStore {
     units: MeasurementUnits
     selectedDay: string | undefined
     selectPlace: (place: Place) => void
-    selectDay: (value: string) => void
+    selectDay: (value: string | undefined) => void
     filterHourlyItems: (hourlyItems: Hourly, currentTime: CurrentTime) => Hourly
     handleUnits: () => void
     handleSelectedUnit: (section: UnitSection) => Units 
