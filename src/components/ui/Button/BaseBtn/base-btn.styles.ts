@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 export const baseBtnStyles = cva(
-    'text-center flex items-center gap-2 rounded-md cursor-pointer transition-colors',
+    'text-center flex items-center justify-center gap-2 rounded-md cursor-pointer transition-colors',
     {
         variants: {
             variant: {

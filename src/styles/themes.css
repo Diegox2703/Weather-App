@@ -12,4 +12,5 @@
     --font-DM-Sans: "DM Sans";
     --font-DM-Sans-Italic: "DM Sans Italic";
     --font-Bricolage-Grotesque: "Bricolage Grotesque";
+    --breakpoint-xs: 430px;
 }
