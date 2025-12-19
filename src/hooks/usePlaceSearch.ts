@@ -38,13 +38,26 @@ export const usePlaceSearch = () => {
         setQuery(place.name)
     }
 
-    const onHandleFocus = (state: boolean) => setIsFocus(state)
+    const onHandleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+        setIsFocus(true)
+        setTimeout(() => {
+            e.target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            })
+        }, 300);
+    } 
+
+    const onHandleBlur = () => {
+        setIsFocus(false)
+    }
 
     return { 
         onHandleSearch, 
         onHandleSearchByEnter, 
         onHandleSearchByClick, 
         onHandleFocus,
+        onHandleBlur,
         isLoading,
         isError, 
         data, 

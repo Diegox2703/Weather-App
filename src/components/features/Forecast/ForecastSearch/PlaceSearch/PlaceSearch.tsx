@@ -9,6 +9,7 @@ export function PlaceSearch() {
     onHandleSearchByEnter, 
     onHandleSearchByClick, 
     onHandleFocus,
+    onHandleBlur,
     isLoading, 
     isError,
     data, 
@@ -22,8 +23,8 @@ export function PlaceSearch() {
         <Input 
           onChange={onHandleSearch}
           onKeyDown={onHandleSearchByEnter}
-          onFocus={() => onHandleFocus(true)}
-          onBlur={() => onHandleFocus(false)}
+          onFocus={onHandleFocus}
+          onBlur={onHandleBlur}
           value={query}
           placeholder='Search for a place...' 
         />
