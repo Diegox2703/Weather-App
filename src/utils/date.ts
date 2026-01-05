@@ -5,7 +5,7 @@ export const getCurrentDate = (date: string) => {
 
     const dayOfTheMonth = currentDate.getDate()
     const day = DAYS[currentDate.getDay()]
-    const month = MONTHS[currentDate.getMonth() - 1].slice(0, 3)
+    const month = MONTHS[currentDate.getMonth()].slice(0, 3)
     const year = currentDate.getFullYear()
 
     return `${day}, ${month} ${dayOfTheMonth}, ${year}`
